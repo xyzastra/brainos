@@ -39,10 +39,20 @@ const Projects = () => {
       <Header />
       
       <main className="container mx-auto px-8 py-24 max-w-6xl">
-        <SectionHeader
-          title="Projects"
-          description="A showcase of technical projects, experiments, and builds that represent my journey in software development and creative problem-solving."
-        />
+        <div className="flex items-center justify-between mb-8">
+          <SectionHeader
+            title="Projects"
+            description="A showcase of technical projects, experiments, and builds that represent my journey in software development and creative problem-solving."
+          />
+          <a
+            href="https://photos.app.goo.gl/1LkM3S9vfY7EE4Do9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-green-600 hover:bg-green-700 text-white transition-colors whitespace-nowrap"
+          >
+            edu/energy samples
+          </a>
+        </div>
 
         {/* Featured Projects Carousel */}
         {projects.length > 3 && (
