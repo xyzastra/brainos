@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContentCard } from "@/components/ContentCard";
-import { Code } from "lucide-react";
 
 // Sample project data
 const projects = [
@@ -30,14 +29,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-content">
+    <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16 max-w-6xl">
+      <main className="container mx-auto px-8 py-24 max-w-6xl">
         <SectionHeader
           title="Projects"
           description="A showcase of technical projects, experiments, and builds that represent my journey in software development and creative problem-solving."
-          icon={<Code className="h-16 w-16 text-primary" />}
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

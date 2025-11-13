@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Calendar } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -14,26 +13,25 @@ interface ContentCardProps {
 export const ContentCard = ({ title, description, date, path, tags }: ContentCardProps) => {
   return (
     <Link to={path} className="block group">
-      <Card className="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/50">
-        <CardHeader>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-            <Calendar className="h-4 w-4" />
+      <Card className="h-full transition-all duration-300 hover:shadow-xl border-border">
+        <CardHeader className="space-y-4">
+          <div className="text-sm text-muted-foreground uppercase tracking-widest font-mono">
             <time dateTime={date}>{new Date(date).toLocaleDateString('en-US', { 
               year: 'numeric', 
-              month: 'long', 
+              month: 'short', 
               day: 'numeric' 
             })}</time>
           </div>
-          <CardTitle className="group-hover:text-primary transition-colors">
+          <CardTitle className="text-2xl font-serif group-hover:opacity-60 transition-opacity">
             {title}
           </CardTitle>
-          <CardDescription className="line-clamp-2">{description}</CardDescription>
+          <CardDescription className="text-base leading-relaxed">{description}</CardDescription>
         </CardHeader>
         {tags && tags.length > 0 && (
           <CardContent>
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
+                <Badge key={tag} variant="outline" className="text-xs font-mono uppercase tracking-wider">
                   {tag}
                 </Badge>
               ))}

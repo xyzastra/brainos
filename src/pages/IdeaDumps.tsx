@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContentCard } from "@/components/ContentCard";
-import { Lightbulb } from "lucide-react";
 
 // Sample idea dumps data
 const ideaDumps = [
@@ -30,14 +29,13 @@ const ideaDumps = [
 
 const IdeaDumps = () => {
   return (
-    <div className="min-h-screen bg-content">
+    <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16 max-w-6xl">
+      <main className="container mx-auto px-8 py-24 max-w-6xl">
         <SectionHeader
           title="Idea Dumps"
           description="Raw thoughts, unfiltered concepts, and creative brainstorms. This is where ideas are born before they're refined into full projects."
-          icon={<Lightbulb className="h-16 w-16 text-accent" />}
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

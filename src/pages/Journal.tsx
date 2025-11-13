@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContentCard } from "@/components/ContentCard";
-import { BookOpen } from "lucide-react";
 
 // Sample journal entries data
 const journalEntries = [
@@ -30,14 +29,13 @@ const journalEntries = [
 
 const Journal = () => {
   return (
-    <div className="min-h-screen bg-content">
+    <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16 max-w-6xl">
+      <main className="container mx-auto px-8 py-24 max-w-6xl">
         <SectionHeader
           title="Journal"
           description="Personal reflections, learnings, and experiences captured over time. A space for introspection and growth."
-          icon={<BookOpen className="h-16 w-16 text-primary" />}
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

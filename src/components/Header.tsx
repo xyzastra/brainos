@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Brain, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
@@ -24,10 +24,10 @@ export const Header = () => {
         to={path}
         onClick={() => mobile && setOpen(false)}
         className={`
-          px-4 py-2 rounded-md text-sm font-medium transition-colors
+          px-3 py-2 text-sm font-medium transition-opacity uppercase tracking-wide
           ${isActive 
-            ? "text-primary bg-nav-hover" 
-            : "text-foreground hover:text-primary hover:bg-nav-hover"
+            ? "text-foreground border-b-2 border-foreground" 
+            : "text-muted-foreground hover:text-foreground hover:opacity-70"
           }
         `}
       >
@@ -37,11 +37,10 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-header/95 backdrop-blur supports-[backdrop-filter]:bg-header/80">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-6xl">
-        <Link to="/" className="flex items-center gap-2 font-bold text-xl text-foreground hover:text-primary transition-colors">
-          <Brain className="h-6 w-6 text-primary" />
-          <span>brainOS</span>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-header">
+      <nav className="container mx-auto px-8 h-20 flex items-center justify-between max-w-7xl">
+        <Link to="/" className="font-serif font-bold text-2xl text-foreground hover:opacity-60 transition-opacity tracking-tight uppercase">
+          brainOS
         </Link>
 
         {/* Desktop Navigation */}
