@@ -2,13 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import hugo-brewm inspired styles */
+@import './styles/brewm.css';
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Minimalist black and white color scheme */
+    /* Hugo-brewm inspired color scheme */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
@@ -37,7 +40,7 @@ All colors MUST be HSL.
     --input: 0 0% 90%;
     --ring: 0 0% 0%;
 
-    --radius: 0rem;
+    --radius: 0.5rem;
 
     --header-bg: 0 0% 100%;
     --content-bg: 0 0% 100%;
@@ -45,7 +48,31 @@ All colors MUST be HSL.
     --nav-hover: 0 0% 95%;
     --nav-active: 0 0% 0%;
     
+    /* Hugo-brewm specific variables */
+    --bg: 0 0% 100%;
+    --fg: 0 0% 0%;
+    --mid: 0 0% 50%;
+    --off: 0 0% 96%;
+    --g18s: 0 0% 94%;
+    --ac: 0 0% 10%;
+    
+    /* Spacing variables */
+    --medskip: 2rem;
+    --bigskip: 4rem;
+    --golden-ratio: 61.8%;
+    
+    /* Typography */
+    --line-height: 1.8;
+    --baselineStretch: 1.5;
+    --normalsize: 1rem;
+    --small: 0.875rem;
+    --scriptsize: 0.75rem;
+    --footnotesize: 0.8125rem;
+    --Large: 1.25rem;
+    
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --flashGuard: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
   .dark {
@@ -82,6 +109,14 @@ All colors MUST be HSL.
     
     --nav-hover: 0 0% 10%;
     --nav-active: 0 0% 100%;
+    
+    /* Hugo-brewm specific dark mode variables */
+    --bg: 0 0% 0%;
+    --fg: 0 0% 100%;
+    --mid: 0 0% 50%;
+    --off: 0 0% 5%;
+    --g18s: 0 0% 8%;
+    --ac: 0 0% 90%;
   }
 }
 
@@ -92,8 +127,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: var(--line-height, 1.8);
+    font-family: 'Lexend Deca', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: var(--line-height);
     letter-spacing: -0.01em;
     transition: var(--transition-smooth);
   }
@@ -116,7 +151,18 @@ All colors MUST be HSL.
   }
 
   code, pre {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inconsolata', 'Courier New', monospace;
+  }
+
+  /* Reader-first typography */
+  article p {
+    margin-bottom: 1.5rem;
+    line-height: var(--baselineStretch);
+  }
+
+  /* Link styles */
+  a {
+    transition: var(--transition-smooth);
   }
 
   /* Focus Mode Styles */

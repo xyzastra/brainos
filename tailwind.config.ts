@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['IBM Plex Serif', 'ui-serif', 'Georgia', 'serif'],
-        mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
+        sans: ['Lexend Deca', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Crimson Pro', 'EB Garamond', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['Inconsolata', 'ui-monospace', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +61,14 @@ export default {
         nav: {
           hover: "hsl(var(--nav-hover))",
           active: "hsl(var(--nav-active))",
+        },
+        brewm: {
+          bg: "hsl(var(--bg))",
+          fg: "hsl(var(--fg))",
+          mid: "hsl(var(--mid))",
+          off: "hsl(var(--off))",
+          g18s: "hsl(var(--g18s))",
+          ac: "hsl(var(--ac))",
         },
       },
       borderRadius: {

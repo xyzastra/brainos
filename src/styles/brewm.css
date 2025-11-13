@@ -1,0 +1,130 @@
+/* Hugo-brewm inspired styles */
+
+/* Feed Item Styles */
+.feed-item {
+  position: relative;
+  transition: transform 99ms ease;
+}
+
+.feed-item:hover,
+.feed-item:focus-within {
+  transform: scale(1.01);
+}
+
+.feed-item .par {
+  --grd: linear-gradient(hsl(var(--off)) 50%, transparent 100%);
+  opacity: 0.86;
+  -webkit-mask-image: var(--grd);
+  mask-image: var(--grd);
+}
+
+/* Carousel Styles */
+.has-crsl {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.crsl {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+.crsl::-webkit-scrollbar {
+  height: 6px;
+}
+
+.crsl::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crsl::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border));
+  border-radius: 3px;
+}
+
+.crsl::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground));
+}
+
+/* Column Layout */
+.column {
+  --col: 16rem;
+  display: block;
+  -webkit-column-gap: 1.618rem;
+  -moz-column-gap: 1.618rem;
+  column-gap: 1.618rem;
+  column-fill: balance;
+  -webkit-column-width: var(--col);
+  -moz-column-width: var(--col);
+  column-width: var(--col);
+}
+
+.column > * {
+  break-after: auto;
+  break-before: auto;
+  break-inside: avoid;
+  margin-bottom: 1.618rem;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+}
+
+/* Typography enhancements */
+.story-link {
+  position: relative;
+  display: inline-block;
+}
+
+.story-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.story-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  margin: var(--medskip) 1ex;
+}
+
+.pagination a {
+  display: flex;
+  padding: 1ex;
+  text-transform: uppercase;
+  letter-spacing: 0.2ex;
+  color: hsl(var(--ac));
+  gap: 1ex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .column {
+    --col: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .column {
+    --col: 20rem;
+  }
+}

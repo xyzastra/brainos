@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
-import { ContentCard } from "@/components/ContentCard";
+import { FeedItem } from "@/components/FeedItem";
 
 // Sample journal entries data
 const journalEntries = [
@@ -10,6 +10,7 @@ const journalEntries = [
     description: "Thoughts on sharing my learning journey openly and the unexpected benefits of transparency in the development process.",
     date: "2024-03-20",
     tags: ["Learning", "Community", "Growth"],
+    readingTime: 4,
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ const journalEntries = [
     description: "Personal insights on dealing with self-doubt in tech and strategies that have helped me move forward confidently.",
     date: "2024-03-12",
     tags: ["Mental Health", "Career", "Personal"],
+    readingTime: 6,
   },
   {
     id: "3",
@@ -24,6 +26,7 @@ const journalEntries = [
     description: "Why I started documenting everything and how it has transformed my approach to learning and problem-solving.",
     date: "2024-03-05",
     tags: ["Documentation", "Learning", "Productivity"],
+    readingTime: 5,
   },
 ];
 
@@ -38,15 +41,16 @@ const Journal = () => {
           description="Personal reflections, learnings, and experiences captured over time. A space for introspection and growth."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {journalEntries.map((entry) => (
-            <ContentCard
+            <FeedItem
               key={entry.id}
               title={entry.title}
               description={entry.description}
               date={entry.date}
               path={`/journal/${entry.id}`}
               tags={entry.tags}
+              readingTime={entry.readingTime}
             />
           ))}
         </div>

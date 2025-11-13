@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
-import { ContentCard } from "@/components/ContentCard";
+import { FeedItem } from "@/components/FeedItem";
 
 // Sample idea dumps data
 const ideaDumps = [
@@ -10,6 +10,7 @@ const ideaDumps = [
     description: "Concept for an adaptive learning platform that personalizes content based on individual learning patterns and pace.",
     date: "2024-03-18",
     tags: ["AI", "Education", "Concept"],
+    readingTime: 3,
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ const ideaDumps = [
     description: "Exploring blockchain-based systems for preserving and sharing knowledge across communities without centralized control.",
     date: "2024-03-10",
     tags: ["Blockchain", "Web3", "Community"],
+    readingTime: 4,
   },
   {
     id: "3",
@@ -24,6 +26,7 @@ const ideaDumps = [
     description: "Ideas for incorporating game mechanics into daily productivity tools to increase motivation and engagement.",
     date: "2024-02-28",
     tags: ["Gamification", "Productivity", "UX"],
+    readingTime: 3,
   },
 ];
 
@@ -38,15 +41,16 @@ const IdeaDumps = () => {
           description="Raw thoughts, unfiltered concepts, and creative brainstorms. This is where ideas are born before they're refined into full projects."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {ideaDumps.map((idea) => (
-            <ContentCard
+            <FeedItem
               key={idea.id}
               title={idea.title}
               description={idea.description}
               date={idea.date}
               path={`/idea-dumps/${idea.id}`}
               tags={idea.tags}
+              readingTime={idea.readingTime}
             />
           ))}
         </div>
