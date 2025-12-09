@@ -90,21 +90,21 @@ const Index = () => {
         </section>
 
         {/* Sections Grid */}
-        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-12">
+        <section className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-6 lg:gap-8">
             {sections.map((section) => (
               <Link
                 key={section.path}
                 to={section.path}
-                className="group border border-border p-6 sm:p-8 md:p-12 hover:bg-muted transition-colors"
+                className="group border border-border p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-muted transition-colors"
               >
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-2 sm:mb-3 md:mb-4 group-hover:opacity-60 transition-opacity">
+                <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-serif font-bold mb-1 sm:mb-2 md:mb-3 group-hover:opacity-60 transition-opacity">
                   {section.title}
                 </h2>
-                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed">
                   {section.description}
                 </p>
-                <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm uppercase tracking-widest font-medium">
+                <div className="mt-2 sm:mt-3 md:mt-4 text-[10px] sm:text-xs uppercase tracking-widest font-medium">
                   Explore →
                 </div>
               </Link>
