@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Clock } from "lucide-react";
 
 interface FeedItemProps {
   title: string;
@@ -12,32 +12,12 @@ interface FeedItemProps {
   readingTime?: number;
 }
 
-export const FeedItem = ({
-  title,
-  description,
-  date,
-  path,
-  tags,
-  coverImage,
-  readingTime
-}: FeedItemProps) => {
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-
+export const FeedItem = ({ title, description, date, path, tags, coverImage, readingTime }: FeedItemProps) => {
   return (
-    <article className="feed-item group relative border border-border p-4 sm:p-5 md:p-6 hover:shadow-lg transition-all duration-200">
-      <Link 
-        to={path} 
-        className="absolute inset-0 z-10"
-        aria-label={`Read more about ${title}`}
-      />
-      
-      <div className="flex flex-col gap-3 sm:gap-4">
+    <Link to={path} className="group block">
+      <article className="h-full flex flex-col justify-between border border-border p-4 sm:p-5 md:p-6 rounded-lg hover:border-foreground/50 transition-colors bg-card text-card-foreground">
         {coverImage && (
-          <div className="relative w-full aspect-[4/3] sm:aspect-[10/8] overflow-hidden rounded-sm">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[10/8] overflow-hidden rounded-sm mb-3 sm:mb-4">
             <img 
               src={coverImage} 
               alt={title}
@@ -47,39 +27,46 @@ export const FeedItem = ({
         )}
         
         <div className="flex-1">
-          <div className="flex items-center justify-between mb-1.5 sm:mb-2 text-xs sm:text-sm text-muted-foreground">
-            <time dateTime={date}>{formattedDate}</time>
+          <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-mono mb-2 sm:mb-4">
+            <time dateTime={date}>
+              {new Date(date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
             {readingTime && (
-              <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3" />
-                {readingTime} min read
-              </span>
+              <>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <Clock className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                  {readingTime} min
+                </span>
+              </>
             )}
           </div>
-
-          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif font-semibold mb-2 sm:mb-3 group-hover:opacity-70 transition-opacity leading-tight">
+          
+          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif font-bold mb-2 sm:mb-3 group-hover:underline decoration-1 underline-offset-4 leading-tight">
             {title}
-          </h1>
-
-          <p className="par text-muted-foreground text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
+          </h3>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-3">
             {description}
           </p>
-
-          {tags && tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              {tags.map((tag) => (
-                <Badge 
-                  key={tag} 
-                  variant="secondary" 
-                  className="text-[10px] sm:text-xs pointer-events-none px-1.5 sm:px-2 py-0.5"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
         </div>
-      </div>
-    </article>
+
+        <div className="flex items-center justify-between mt-auto pt-3 sm:pt-4 border-t border-border/50">
+          <div className="flex flex-wrap gap-1 sm:gap-2">
+            {tags?.slice(0, 2).map((tag) => (
+              <Badge key={tag} variant="secondary" className="font-mono text-[9px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          <span className="inline-flex items-center text-xs sm:text-sm font-medium opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+            Read <ArrowRight className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 };
