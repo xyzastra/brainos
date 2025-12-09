@@ -66,15 +66,20 @@ export const FeedItem = ({
           </p>
 
           {tags && tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 relative z-20">
               {tags.map((tag) => (
-                <Badge 
+                <Link 
                   key={tag} 
-                  variant="secondary" 
-                  className="text-[10px] sm:text-xs pointer-events-none px-1.5 sm:px-2 py-0.5"
+                  to={`/knowledge/${tag}`}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  {tag}
-                </Badge>
+                  <Badge 
+                    variant="secondary" 
+                    className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                  >
+                    {tag}
+                  </Badge>
+                </Link>
               ))}
             </div>
           )}
