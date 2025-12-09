@@ -43,7 +43,7 @@ The design follows a minimalist black and white aesthetic inspired by hugo-brewm
 - Tag-based filtering and organization
 - Dark mode support
 - Export functionality for backup
-    `,
+    `
   },
   "2": {
     id: "2",
@@ -70,7 +70,7 @@ The main challenge was optimizing performance when rendering thousands of data p
 ## Results
 
 The dashboard reduced the time to insight by 60% and is now used daily by the entire organization.
-    `,
+    `
   },
   "3": {
     id: "3",
@@ -93,17 +93,16 @@ A suite of command-line tools designed to automate common development workflows 
 ## Impact
 
 These tools save approximately 5 hours per week across the team, allowing developers to focus on higher-value work.
-    `,
-  },
+    `
+  }
 };
-
 const ProjectDetail = () => {
-  const { id } = useParams();
+  const {
+    id
+  } = useParams();
   const project = id ? projects[id as keyof typeof projects] : null;
-
   if (!project) {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-8 py-24 max-w-4xl text-center">
           <h1 className="text-4xl font-serif font-bold mb-4">Project Not Found</h1>
@@ -115,78 +114,19 @@ const ProjectDetail = () => {
             </Button>
           </Link>
         </main>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-8 py-24 max-w-4xl">
+      <main className="container mx-auto max-w-4xl px-[11px] py-[11px]">
         <Link to="/projects" className="inline-flex items-center text-sm mb-8 hover:opacity-60 transition-opacity uppercase tracking-widest">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Projects
         </Link>
 
-        <article>
-          <header className="mb-12 pb-8 border-b border-border">
-            <div className="text-sm text-muted-foreground uppercase tracking-widest font-mono mb-4">
-              <time dateTime={project.date}>
-                {new Date(project.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </time>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 tracking-tight">
-              {project.title}
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-              {project.description}
-            </p>
-            {project.tags && project.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <Badge key={tag} variant="outline" className="font-mono uppercase tracking-wider">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            )}
-          </header>
-
-          <div className="prose prose-lg max-w-none">
-            {project.content.split('\n').map((paragraph, index) => {
-              if (paragraph.trim().startsWith('##')) {
-                return (
-                  <h2 key={index} className="text-3xl font-serif font-bold mt-12 mb-4">
-                    {paragraph.replace('##', '').trim()}
-                  </h2>
-                );
-              }
-              if (paragraph.trim().startsWith('-')) {
-                return (
-                  <li key={index} className="ml-6 my-2">
-                    {paragraph.replace('-', '').trim()}
-                  </li>
-                );
-              }
-              if (paragraph.trim()) {
-                return (
-                  <p key={index} className="mb-6 text-lg leading-relaxed">
-                    {paragraph}
-                  </p>
-                );
-              }
-              return null;
-            })}
-          </div>
-        </article>
+        
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default ProjectDetail;
