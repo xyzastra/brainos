@@ -13,6 +13,8 @@ import IdeaDumpDetail from "./pages/IdeaDumpDetail";
 import Journal from "./pages/Journal";
 import JournalDetail from "./pages/JournalDetail";
 import Resume from "./pages/Resume";
+import Knowledge from "./pages/Knowledge";
+import KnowledgeTag from "./pages/KnowledgeTag";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App = () => {
                 <Route path="/journal" element={<Journal />} />
                 <Route path="/journal/:id" element={<JournalDetail />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/knowledge" element={<Knowledge />} />
+                <Route path="/knowledge/:tagId" element={<KnowledgeTag />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
