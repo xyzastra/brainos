@@ -9,6 +9,7 @@ const navigation = [
   { name: "Projects", path: "/projects" },
   { name: "Idea Dumps", path: "/idea-dumps" },
   { name: "Journal", path: "/journal" },
+  { name: "Knowledge", path: "/knowledge" },
   { name: "Resume", path: "/resume" },
 ];
 
