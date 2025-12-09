@@ -70,8 +70,8 @@ const Index = () => {
         <Header />
 
         {/* Featured Content Carousel */}
-        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 max-w-6xl border-b border-border">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-4 sm:mb-6 md:mb-8">Featured</h2>
+        <section className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-10 lg:py-12 max-w-6xl border-b border-border">
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-serif font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6">Featured</h2>
           <Carousel>
             {featuredProjects.map((item) => (
               <CarouselItem key={`${item.type}-${item.id}`}>
