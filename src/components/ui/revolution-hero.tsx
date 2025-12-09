@@ -146,14 +146,14 @@ const fragmentShader = `
     
     float finalShape = max(shape1 * 0.8, max(shape2 * 0.6, shape3 * 0.4));
     
-    // Enhanced dramatic color palette
-    vec3 color1 = vec3(1.0, 0.1, 0.6);   // Hot pink
-    vec3 color2 = vec3(1.0, 0.3, 0.1);   // Electric orange
-    vec3 color3 = vec3(0.9, 0.1, 1.0);   // Electric purple
-    vec3 color4 = vec3(0.1, 0.5, 1.0);   // Electric blue
-    vec3 color5 = vec3(0.1, 1.0, 0.9);   // Electric cyan
-    vec3 color6 = vec3(0.3, 0.1, 0.9);   // Deep purple
-    vec3 color7 = vec3(1.0, 0.8, 0.1);   // Electric yellow
+    // Professional emerald/blue color palette
+    vec3 color1 = vec3(0.2, 0.9, 0.6);   // Bright emerald
+    vec3 color2 = vec3(0.1, 0.7, 0.5);   // Deep emerald
+    vec3 color3 = vec3(0.1, 0.6, 0.9);   // Ocean blue
+    vec3 color4 = vec3(0.2, 0.4, 0.8);   // Royal blue
+    vec3 color5 = vec3(0.3, 0.9, 0.8);   // Teal cyan
+    vec3 color6 = vec3(0.1, 0.3, 0.6);   // Deep navy
+    vec3 color7 = vec3(0.4, 0.95, 0.7);  // Mint green
     
     // Smooth color transitions
     float gradient = 1.0 - uv.y;
