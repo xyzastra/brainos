@@ -15,56 +15,56 @@ interface Idea {
 const ideaDumps: Idea[] = [
   {
     id: "6",
-    title: "Lucid Dream Journal Interface",
+    title: "Hypnagogic Capture Interface",
     description:
-      "An audio-first journal app designed to be used with eyes closed immediately upon waking to capture dream details.",
+      "Leveraging the 'hypnagogic' state—the transition between wakefulness and sleep—for creative problem solving. An audio-first hardware concept.",
     date: "2024-04-02",
-    tags: ["Health", "Audio", "Experimental"],
+    tags: ["Biofeedback", "Audio", "Experimental"],
     readingTime: 3,
   },
   {
     id: "5",
-    title: "AR Interior Design Overlay",
+    title: "Diminished Reality Engine",
     description:
-      "Real-time augmented reality tool that removes existing furniture from the camera feed to visualize new layouts cleanly.",
+      "An AR concept that focuses on removing objects rather than adding them. Using inpainting to visualize interior design without the clutter.",
     date: "2024-03-30",
     tags: ["AR", "Computer Vision", "Design"],
     readingTime: 4,
   },
   {
     id: "4",
-    title: "Micro-Vertical Urban Farming",
+    title: "Autonomous Micro-Farming",
     description:
-      "A modular IoT system designed for high-density apartment living that automates the growth of essential herbs and microgreens.",
+      "A hardware/software stack for high-yield aeroponic vertical gardens designed specifically for standard 600sqft city apartments.",
     date: "2024-03-25",
-    tags: ["IoT", "Sustainability", "Hardware"],
+    tags: ["IoT", "Hardware", "Sustainability"],
     readingTime: 3,
   },
   {
     id: "1",
-    title: "AI-Powered Learning Assistant",
+    title: "Adaptive Knowledge Graphs",
     description:
-      "Concept for an adaptive learning platform that personalizes content based on individual learning patterns and pace.",
+      "Moving beyond linear courses. A concept for a learning engine that maps student understanding using Knowledge Space Theory.",
     date: "2024-03-18",
-    tags: ["AI", "Education", "Concept"],
+    tags: ["AI", "EdTech", "Algorithms"],
     readingTime: 3,
   },
   {
     id: "2",
-    title: "Decentralized Knowledge Sharing",
+    title: "The Permaweb Library",
     description:
-      "Exploring blockchain-based systems for preserving and sharing knowledge across communities without centralized control.",
+      "A proposal for a censorship-resistant, community-curated archive of human knowledge stored on the blockchain, immune to 'link rot'.",
     date: "2024-03-10",
-    tags: ["Blockchain", "Web3", "Community"],
+    tags: ["Web3", "Arweave", "Archival"],
     readingTime: 4,
   },
   {
     id: "3",
-    title: "Productivity Through Gamification",
+    title: "Flow State Architecture",
     description:
-      "Ideas for incorporating game mechanics into daily productivity tools to increase motivation and engagement.",
+      "Redesigning productivity tools to move beyond simple 'task tracking' and focusing on inducing and sustaining 'flow states'.",
     date: "2024-02-28",
-    tags: ["Gamification", "Productivity", "UX"],
+    tags: ["UX", "Psychology", "Productivity"],
     readingTime: 3,
   },
 ];
