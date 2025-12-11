@@ -2,69 +2,30 @@ import { Header } from "@/components/Header";
 import { SectionHeader } from "@/components/SectionHeader";
 import { FeedItem } from "@/components/FeedItem";
 
-interface Idea {
-  id: string;
-  title: string;
-  description: string;
-  date: string;
-  tags: string[];
-  readingTime: number;
-}
-
-// Synced with IdeaDumpDetail data
-const ideaDumps: Idea[] = [
-  {
-    id: "6",
-    title: "Hypnagogic Capture Interface",
-    description:
-      "Leveraging the 'hypnagogic' state—the transition between wakefulness and sleep—for creative problem solving. An audio-first hardware concept.",
-    date: "2024-04-02",
-    tags: ["Biofeedback", "Audio", "Experimental"],
-    readingTime: 3,
-  },
-  {
-    id: "5",
-    title: "Diminished Reality Engine",
-    description:
-      "An AR concept that focuses on removing objects rather than adding them. Using inpainting to visualize interior design without the clutter.",
-    date: "2024-03-30",
-    tags: ["AR", "Computer Vision", "Design"],
-    readingTime: 4,
-  },
-  {
-    id: "4",
-    title: "Autonomous Micro-Farming",
-    description:
-      "A hardware/software stack for high-yield aeroponic vertical gardens designed specifically for standard 600sqft city apartments.",
-    date: "2024-03-25",
-    tags: ["IoT", "Hardware", "Sustainability"],
-    readingTime: 3,
-  },
+// Sample idea dumps data
+const ideaDumps = [
   {
     id: "1",
-    title: "Adaptive Knowledge Graphs",
-    description:
-      "Moving beyond linear courses. A concept for a learning engine that maps student understanding using Knowledge Space Theory.",
+    title: "AI-Powered Learning Assistant",
+    description: "Concept for an adaptive learning platform that personalizes content based on individual learning patterns and pace.",
     date: "2024-03-18",
-    tags: ["AI", "EdTech", "Algorithms"],
+    tags: ["AI", "Education", "Concept"],
     readingTime: 3,
   },
   {
     id: "2",
-    title: "The Permaweb Library",
-    description:
-      "A proposal for a censorship-resistant, community-curated archive of human knowledge stored on the blockchain, immune to 'link rot'.",
+    title: "Decentralized Knowledge Sharing",
+    description: "Exploring blockchain-based systems for preserving and sharing knowledge across communities without centralized control.",
     date: "2024-03-10",
-    tags: ["Web3", "Arweave", "Archival"],
+    tags: ["Blockchain", "Web3", "Community"],
     readingTime: 4,
   },
   {
     id: "3",
-    title: "Flow State Architecture",
-    description:
-      "Redesigning productivity tools to move beyond simple 'task tracking' and focusing on inducing and sustaining 'flow states'.",
+    title: "Productivity Through Gamification",
+    description: "Ideas for incorporating game mechanics into daily productivity tools to increase motivation and engagement.",
     date: "2024-02-28",
-    tags: ["UX", "Psychology", "Productivity"],
+    tags: ["Gamification", "Productivity", "UX"],
     readingTime: 3,
   },
 ];
@@ -73,7 +34,7 @@ const IdeaDumps = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
+      
       <main className="container mx-auto px-8 py-24 max-w-6xl">
         <SectionHeader
           title="Idea Dumps"

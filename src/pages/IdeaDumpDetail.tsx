@@ -16,170 +16,198 @@ interface Idea {
 const ideaDumps: Record<string, Idea> = {
   "1": {
     id: "1",
-    title: "Adaptive Knowledge Graphs",
+    title: "AI-Powered Learning Assistant",
     description:
-      "Moving beyond linear courses. A concept for a learning engine that maps student understanding using Knowledge Space Theory to predict optimal learning paths.",
+      "Concept for an adaptive learning platform that personalizes content based on individual learning patterns and pace.",
     date: "2024-03-18",
-    tags: ["AI", "EdTech", "Algorithms"],
+    tags: ["AI", "Education", "Concept"],
     content: `
-## The Problem with Linear Learning
+## Core Concept
 
-Traditional education treats learning as a straight line. But knowledge is a **graph**. Understanding "React" requires understanding "JavaScript," which requires understanding "Variables."
+An intelligent learning assistant that adapts to each student's unique learning style, pace, and preferences.
 
-## The Core Concept
+## Key Ideas
 
-An engine that builds a dynamic **Directed Acyclic Graph (DAG)** of concepts for every user.
-- **Node Status:** Track which concepts are "mastered," "ready to learn," or "blocked."
-- **Spaced Repetition:** Use interaction data to surface review nodes exactly when the forgetting curve dips.
+- Analyze learning patterns through interaction data
+- Personalize content delivery based on comprehension speed
+- Identify knowledge gaps automatically
+- Suggest optimal study schedules
 
-## Technical Architecture
+## Technical Approach
 
+Could leverage machine learning models to:
+- Predict difficulty levels for content
+- Recommend similar topics
+- Track progress over time
+- Provide real-time feedback
 
+## Open Questions
 
-- **Backend:** Neo4j or similar graph database to store concept relationships.
-- **Inference Engine:** Bayesian Knowledge Tracing (BKT) to estimate the probability that a student knows a specific skill based on past performance.
-- **Content Generation:** LLMs to generate quizzes dynamically based on the specific "fringe" nodes the student is currently tackling.
-
-## Why this is hard
-
-Balancing the "explore vs. exploit" trade-off. Do we reinforce what they know (confidence) or push them to new nodes (progress)?
+- How to balance automation with human teaching?
+- Privacy concerns with learning data
+- Scalability for different subjects
     `,
   },
   "2": {
     id: "2",
-    title: "The Permaweb Library",
+    title: "Decentralized Knowledge Sharing",
     description:
-      "A proposal for a censorship-resistant, community-curated archive of human knowledge stored on the blockchain, immune to 'link rot'.",
+      "Exploring blockchain-based systems for preserving and sharing knowledge across communities without centralized control.",
     date: "2024-03-10",
-    tags: ["Web3", "Arweave", "Archival"],
+    tags: ["Blockchain", "Web3", "Community"],
     content: `
-## The Fragility of HTTP
+## Vision
 
-The average lifespan of a webpage is roughly 100 days. "Link rot" is destroying our digital history. Centralized servers go down, companies go bankrupt, and paywalls rise.
+A decentralized platform where knowledge is owned by creators and preserved forever, without relying on centralized servers.
 
-## The Solution: Permanent Storage
+## Why Blockchain?
 
-Using **Arweave** or **IPFS** to create a "pay once, store forever" model.
-- **Content Addressing:** Files are retrieved by *what* they are (hash), not *where* they are (URL).
-- **Incentive Layer:** A token-curated registry where curators stake tokens to vouch for the quality and accuracy of archived content.
+- Immutable record of contributions
+- Transparent attribution
+- Censorship resistance
+- Token incentives for quality content
 
-## Challenges
+## Challenges to Solve
 
-- **The Right to be Forgotten:** How do we handle sensitive data or GDPR requests in an immutable ledger?
-- **Searchability:** Indexing decentralized content is significantly harder than crawling a centralized web.
-- **Cost:** Storing petabytes of data on-chain is expensive. We need a "hot/cold" storage tiering system.
+- Storage costs on-chain
+- Content moderation in decentralized system
+- User experience complexity
+- Adoption barriers
+
+## Potential Solutions
+
+- IPFS for content storage
+- On-chain metadata only
+- Community-driven curation
+- Progressive decentralization
     `,
   },
   "3": {
     id: "3",
-    title: "Flow State Architecture",
+    title: "Productivity Through Gamification",
     description:
-      "Redesigning productivity tools to move beyond simple 'task tracking' and focusing on inducing and sustaining 'flow states' through micro-interactions.",
+      "Ideas for incorporating game mechanics into daily productivity tools to increase motivation and engagement.",
     date: "2024-02-28",
-    tags: ["UX", "Psychology", "Productivity"],
+    tags: ["Gamification", "Productivity", "UX"],
     content: `
-## Beyond Gamification
+## The Problem
 
-Most "gamified" apps just slap badges on a todo list. That's extrinsic motivation, and it wears off. **Flow** is intrinsic.
+Traditional productivity apps are boring and fail to motivate long-term use.
 
-## The Loop Design
+## Game Elements to Explore
 
-We need to design for the **Hook Model**:
-- **Trigger:** Context-aware notifications (e.g., "You have 20 mins before your next meeting, perfect time for a quick task").
-- **Action:** Frictionless entry. Command-K menus, keyboard-first navigation.
-- **Variable Reward:** Visual feedback that feels physical. Satisfying "thump" sounds, confetti physics, progress bars that fill up fluidly.
+- Achievement systems for completing tasks
+- XP and leveling for sustained habits
+- Quests for complex projects
+- Leaderboards for team challenges
+- Daily streaks and rewards
 
-## "Focus Mode" Mechanics
+## Psychological Principles
 
+- Instant feedback loops
+- Variable reward schedules
+- Progress visualization
+- Social comparison and cooperation
 
+## Implementation Ideas
 
-[Image of flow state diagram]
-
-
-- **The White Noise Layer:** Built-in generative soundscapes that adapt to the user's typing speed.
-- **Pomodoro 2.0:** Dynamic timer lengths based on the task complexity, not arbitrary 25-minute blocks.
-- **Blocking Distractions:** Hard integrations with OS-level focus modes to kill Slack notifications during sprints.
+- Task difficulty ratings affect XP earned
+- Boss battles for major milestones
+- Skill trees for different productivity areas
+- Customizable avatars and themes
     `,
   },
   "4": {
     id: "4",
-    title: "Autonomous Micro-Farming",
+    title: "Micro-Vertical Urban Farming",
     description:
-      "A hardware/software stack for high-yield aeroponic vertical gardens designed specifically for standard 600sqft city apartments.",
+      "A modular IoT system designed for high-density apartment living that automates the growth of essential herbs and microgreens.",
     date: "2024-03-25",
-    tags: ["IoT", "Hardware", "Sustainability"],
+    tags: ["IoT", "Sustainability", "Hardware"],
     content: `
-## The Hardware Spec
+## The Concept
 
-A wall-mounted unit (approx 2ft x 4ft) functioning as a closed-loop ecosystem.
-- **Aeroponics:** High-pressure misting nozzles deliver nutrients directly to roots suspended in air. Uses **95% less water** than soil farming.
-- **Lighting:** Multispectral LED arrays that adjust the red/blue ratio depending on the plant's growth stage (vegetative vs. flowering).
+A sleek, wall-mounted modular unit that turns unused apartment wall space into a high-yield garden.
 
-## The Software Layer
+## Hardware Components
 
+- Hydroponic misting nozzles (aeroponics)
+- Full spectrum LED strips controlled by ambient light sensors
+- Raspberry Pi controller for pH and nutrient monitoring
+- Recycled ocean-plastic chassis
 
+## The App Ecosystem
 
-[Image of aeroponics system diagram]
+- "Plant Recipes": Downloadable growth profiles for specific herbs
+- Harvest notifications
+- Community marketplace to trade excess yield with neighbors
+- Visual time-lapses of plant growth
 
+## Feasibility Issues
 
-The "Green Thumb" Algorithm:
-- **Computer Vision:** A camera inside the unit tracks leaf surface area and color to detect nutrient deficiencies or pests before the human eye can.
-- **Recipe Marketplace:** Users download "growth recipes" (specific light/mist schedules) for specific crops like Basil, Arugula, or Strawberries.
-
-## Feasibility Checks
-
-- **Noise:** The water pump needs to be whisper-quiet (<30dB) to live in a studio apartment.
-- **Failure States:** If the pump fails, plants die in hours. Needs battery backup and redundant sensors.
+- Water leakage risks in rentals
+- Energy consumption vs yield value
+- Noise from water pumps
     `,
   },
   "5": {
     id: "5",
-    title: "Diminished Reality Engine",
+    title: "AR Interior Design Overlay",
     description:
-      "An AR concept that focuses on removing objects rather than adding them. Using inpainting to visualize interior design without the clutter.",
+      "Real-time augmented reality tool that removes existing furniture from the camera feed to visualize new layouts cleanly.",
     date: "2024-03-30",
     tags: ["AR", "Computer Vision", "Design"],
     content: `
-## The Occlusion Problem
+## The Pain Point
 
-Current AR apps allow you to place a virtual IKEA sofa in your room. But if your *old* sofa is still there, the illusion breaks immediately.
+Current AR apps just place 3D models *on top* of existing clutter. It's hard to visualize a new sofa if the old one is still visible.
 
-## The Tech: Real-Time Inpainting
+## The Solution: Diminished Reality
 
-We need to combine **Lidar Scanning** with **Generative Adversarial Networks (GANs)**.
-1.  **Segmentation:** Identify the object to be removed (e.g., the old chair).
-2.  **Removal:** Mask the object out of the video feed.
-3.  **Hallucination:** The AI looks at the surrounding floor/wall texture and "hallucinates" what should be behind the object to fill the gap.
+Using "Inpainting" technology to real-time erase existing objects from the camera feed before rendering new 3D assets.
 
-## Use Cases
+## Core Features
 
-- **Real Estate Staging:** Decluttering messy tenant apartments virtually for listing photos.
-- **Renovation Planning:** Visualizing a wall removal by erasing the wall in real-time.
+- Lidar scanning to measure room dimensions instantly
+- "Erase Mode": Tap an object to remove it from the view
+- Lighting estimation to cast realistic shadows
+- Texture matching for the floor where furniture was removed
+
+## Tech Stack Potential
+
+- Apple ARKit / RealityKit
+- TensorFlow Lite for object segmentation on-device
+- Unity for 3D rendering pipeline
     `,
   },
   "6": {
     id: "6",
-    title: "Hypnagogic Capture Interface",
+    title: "Lucid Dream Journal Interface",
     description:
-      "Leveraging the 'hypnagogic' state—the transition between wakefulness and sleep—for creative problem solving. An audio-first hardware concept.",
+      "An audio-first journal app designed to be used with eyes closed immediately upon waking to capture dream details.",
     date: "2024-04-02",
-    tags: ["Biofeedback", "Audio", "Experimental"],
+    tags: ["Health", "Audio", "Experimental"],
     content: `
-## The Science
+## The User Experience
 
-History's greatest thinkers (Edison, Dali) used the hypnagogic state to generate ideas. It's a period of loose associative thinking. The problem is we usually fall asleep and forget them.
+The screen is entirely black (OLED off) to prevent waking the user up fully. Interaction is entirely gesture and voice-based.
 
-## The Interaction Design
+## Interaction Model
 
-A bedside device (no screen) or a haptic pillow.
-- **Input:** Voice-activated, but optimized for whispers (using high-gain mics and noise gating).
-- **The "Anchor":** A gentle haptic vibration that keeps the user tethered to consciousness without fully waking them up.
+- Double tap screen to start recording
+- Haptic feedback confirms recording status
+- Whisper-transcription (optimized for low volume speech)
+- AI summarization to tag themes (e.g., "Flying", "Water", "School")
 
-## The Data Pipeline
+## Data Analysis
 
-- **Transcription:** On-device speech-to-text (privacy first).
-- **Auto-Tagging:** LLM summarization to categorize the "dream logic" into actionable concepts the next morning.
-- **Bio-feedback:** Integration with Oura/Apple Watch to detect the exact moment of sleep onset.
+- Correlate dream themes with previous day's calendar events
+- Sentiment analysis of voice tone
+- Sleep cycle integration via HealthKit
+
+## Why this matters?
+
+Dream recall fades within seconds of opening eyes or seeing light. An audio-only, light-free interface maximizes retention.
     `,
   },
 };
@@ -188,7 +216,7 @@ const IdeaDumpDetail = () => {
   const { id } = useParams();
   const idea = id ? ideaDumps[id] : null;
 
-  // Helper function to render content with proper HTML structure and bold parsing
+  // Helper function to render content with proper HTML structure
   const renderContent = (content: string) => {
     const lines = content.split("\n");
     const elements: JSX.Element[] = [];
@@ -201,23 +229,10 @@ const IdeaDumpDetail = () => {
       if (!trimmed) return;
 
       if (trimmed.startsWith("-")) {
-        // Collect list items with bold formatting support
+        // Collect list items
         listBuffer.push(
-          <li key={`li-${index}`} className="ml-6 my-2 pl-2 marker:text-foreground/50">
-            {trimmed
-              .replace("-", "")
-              .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-              .trim()
-              .split(/<\/?strong>/)
-              .map((part, i) =>
-                i % 2 === 1 ? (
-                  <strong key={i} className="font-semibold text-foreground">
-                    {part}
-                  </strong>
-                ) : (
-                  part
-                ),
-              )}
+          <li key={`li-${index}`} className="ml-6 my-2 pl-2">
+            {trimmed.replace("-", "").trim()}
           </li>,
         );
       } else {
@@ -234,28 +249,14 @@ const IdeaDumpDetail = () => {
         // Render headings or paragraphs
         if (trimmed.startsWith("##")) {
           elements.push(
-            <h2 key={`h2-${index}`} className="text-3xl font-serif font-bold mt-12 mb-6 text-foreground tracking-tight">
+            <h2 key={`h2-${index}`} className="text-3xl font-serif font-bold mt-12 mb-6 text-foreground">
               {trimmed.replace("##", "").trim()}
             </h2>,
           );
-        } else if (trimmed.startsWith("[Image of")) {
-          // Optional: Handle image placeholders if you have an image component
-          // For now, we render nothing or a placeholder div
-          // This is just to prevent raw text rendering of the tag
         } else {
-          // Paragraphs with bold formatting support
-          const parts = trimmed.split(/\*\*(.*?)\*\*/g);
           elements.push(
             <p key={`p-${index}`} className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              {parts.map((part, i) =>
-                i % 2 === 1 ? (
-                  <strong key={i} className="font-semibold text-foreground">
-                    {part}
-                  </strong>
-                ) : (
-                  part
-                ),
-              )}
+              {trimmed}
             </p>,
           );
         }

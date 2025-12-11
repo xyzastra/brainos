@@ -1,57 +1,117 @@
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
-import { ArrowRight, BookOpen, Brain } from "lucide-react";
+import { Carousel, CarouselItem } from "@/components/Carousel";
+import { FeedItem } from "@/components/FeedItem";
+import { Component as RevolutionHero } from "@/components/ui/revolution-hero";
+import flowLinesVertical from "@/assets/flow-lines-vertical.svg";
+
+// Sample featured content
+const featuredProjects = [
+  {
+    id: "1",
+    title: "Personal Knowledge Base",
+    description: "A React-based knowledge management system for organizing projects, ideas, and journal entries with a clean, reader-first design.",
+    date: "2024-03-15",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    coverImage: flowLinesVertical,
+    readingTime: 5,
+    type: "project" as const,
+  },
+  {
+    id: "2",
+    title: "Data Visualization Dashboard",
+    description: "Interactive dashboard for visualizing complex datasets with real-time updates and customizable charts.",
+    date: "2024-02-20",
+    tags: ["D3.js", "React", "API Integration"],
+    readingTime: 8,
+    type: "project" as const,
+  },
+  {
+    id: "1",
+    title: "Reflections on Building in Public",
+    description: "Thoughts on sharing my learning journey openly and the unexpected benefits of transparency in the development process.",
+    date: "2024-03-20",
+    tags: ["Learning", "Community", "Growth"],
+    readingTime: 4,
+    type: "journal" as const,
+  },
+];
 
 const Index = () => {
+  const sections = [
+    {
+      title: "Projects",
+      description: "Technical projects, experiments, and builds showcasing my work and learning journey.",
+      path: "/projects",
+    },
+    {
+      title: "Idea Dumps",
+      description: "Raw thoughts, concepts, and brainstorms—a collection of ideas waiting to be refined.",
+      path: "/idea-dumps",
+    },
+    {
+      title: "Journal",
+      description: "Personal reflections, learnings, and experiences documented over time.",
+      path: "/journal",
+    },
+    {
+      title: "Resume",
+      description: "Professional experience, skills, and achievements in one place.",
+      path: "/resume",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      
-      <main className="flex-1 container mx-auto px-4 sm:px-6 md:px-8 flex flex-col justify-center max-w-5xl">
-        <div className="space-y-6 sm:space-y-8 py-12 sm:py-16 md:py-24">
-          <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-serif font-bold tracking-tight text-foreground animate-fade-in">
-              BrainOS<span className="text-primary">.</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              A digital garden for raw ideas, engineering logs, and ongoing experiments. 
-              Documenting the process of building, learning, and failing in public.
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* WebGL Hero */}
+      <RevolutionHero />
 
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 pt-4 sm:pt-6 md:pt-8">
-            <Link to="/journal" className="group animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="h-full border border-border p-5 sm:p-6 md:p-8 rounded-lg hover:bg-secondary/30 hover:border-foreground/30 transition-all cursor-pointer">
-                <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <BookOpen className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-foreground" />
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-1.5 sm:mb-2">The Journal</h2>
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Long-form reflections on engineering, mental models, and the "why" behind the code.
+      <div className="bg-background">
+        <Header />
+
+        {/* Featured Content Carousel */}
+        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 max-w-6xl border-b border-border">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-4 sm:mb-6 md:mb-8">Featured</h2>
+          <Carousel>
+            {featuredProjects.map((item) => (
+              <CarouselItem key={`${item.type}-${item.id}`}>
+                <FeedItem
+                  title={item.title}
+                  description={item.description}
+                  date={item.date}
+                  path={`/${item.type === 'project' ? 'projects' : 'journal'}/${item.id}`}
+                  tags={item.tags}
+                  coverImage={item.coverImage}
+                  readingTime={item.readingTime}
+                />
+              </CarouselItem>
+            ))}
+          </Carousel>
+        </section>
+
+        {/* Sections Grid */}
+        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-12">
+            {sections.map((section) => (
+              <Link
+                key={section.path}
+                to={section.path}
+                className="group border border-border p-6 sm:p-8 md:p-12 hover:bg-muted transition-colors"
+              >
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-2 sm:mb-3 md:mb-4 group-hover:opacity-60 transition-opacity">
+                  {section.title}
+                </h2>
+                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+                  {section.description}
                 </p>
-              </div>
-            </Link>
-
-            <Link to="/idea-dumps" className="group animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="h-full border border-border p-5 sm:p-6 md:p-8 rounded-lg hover:bg-secondary/30 hover:border-foreground/30 transition-all cursor-pointer">
-                <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <Brain className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-foreground" />
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm uppercase tracking-widest font-medium">
+                  Explore →
                 </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-1.5 sm:mb-2">Idea Dumps</h2>
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Product specs, RFCs, and raw concepts. The "what" and "how" of potential future projects.
-                </p>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
-        </div>
-      </main>
-
-      <footer className="border-t border-border py-6 sm:py-8 text-center text-xs sm:text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} BrainOS. Built with React & Tailwind.</p>
-      </footer>
+        </section>
+      </div>
     </div>
   );
 };
