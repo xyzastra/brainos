@@ -70,8 +70,8 @@ const Index = () => {
         <Header />
 
         {/* Featured Content Carousel */}
-        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 max-w-6xl border-b border-border">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-4 sm:mb-6 md:mb-8">Featured</h2>
+        <section className="container mx-auto px-8 py-16 max-w-6xl border-b border-border">
+          <h2 className="text-3xl font-serif font-bold mb-8">Featured</h2>
           <Carousel>
             {featuredProjects.map((item) => (
               <CarouselItem key={`${item.type}-${item.id}`}>
@@ -90,21 +90,21 @@ const Index = () => {
         </section>
 
         {/* Sections Grid */}
-        <section className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-12">
+        <section className="container mx-auto px-8 py-24 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12">
             {sections.map((section) => (
               <Link
                 key={section.path}
                 to={section.path}
-                className="group border border-border p-6 sm:p-8 md:p-12 hover:bg-muted transition-colors"
+                className="group border border-border p-12 hover:bg-muted transition-colors"
               >
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-2 sm:mb-3 md:mb-4 group-hover:opacity-60 transition-opacity">
+                <h2 className="text-3xl font-serif font-bold mb-4 group-hover:opacity-60 transition-opacity">
                   {section.title}
                 </h2>
-                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   {section.description}
                 </p>
-                <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm uppercase tracking-widest font-medium">
+                <div className="mt-6 text-sm uppercase tracking-widest font-medium">
                   Explore →
                 </div>
               </Link>
